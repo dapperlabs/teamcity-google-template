@@ -31,7 +31,7 @@ resources:
     region: {{ REGION }}
     settings:
       tier: {{ DB_TIER }}
-      backupConfiguration:
+      {# backupConfiguration:
         binaryLogEnabled: true
         enabled: true
       databaseFlags:
@@ -39,10 +39,10 @@ resources:
         value: 5
       - name: slow_query_log
         value: 1
-      - name: character_set_server
+      - name: character_set_server 
         value: utf8
       - name: max_allowed_packet
-        value: 16777216
+        value: 16777216 #}
 
 - name: create-user
   type: gcp-types/sqladmin-v1beta4:users
