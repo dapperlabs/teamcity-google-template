@@ -36,7 +36,7 @@ To do it, use the following command:
 
 ## Deployment
 
-### Quick Start 
+### Quick Start
 
 The easiest and **not secure** way to create test TeamCity deployment is to execute the following command:
 
@@ -103,7 +103,7 @@ The list of pre-configured installation types:
 ## TeamCity Update
 
 To change the TeamCity version, start the deployment script with the required version number and then execute the [Reset](https://cloud.google.com/compute/docs/instances/restarting-an-instance) action on the TeamCity GCE instance:
- 
+
 ```sh
 > gcloud deployment-manager deployments update teamcity \
   --template https://raw.githubusercontent.com/JetBrains/teamcity-google-template/master/teamcity.jinja \
@@ -125,7 +125,7 @@ During deployment, the template allocates the following resource:
 After deployment you will be able to connect to the GCE instance via SSH. In CoreOS TeamCity works as the following systemd service:
 
 * `teamcity-server.service` - launches TeamCity server.
-* `teamcity-agent.service` - launches TeamCity agent.
+* ~`teamcity-agent.service` - launches TeamCity agent.~
 * `nginx.service` - provides reverse proxy for TeamCity server when `domainName` is set.
 * `letsencrypt.service` - executes auto SSL certificate retrieval for specified `domainName`.
 
